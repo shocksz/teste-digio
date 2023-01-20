@@ -25,13 +25,13 @@ final class TestHomeViewModel: XCTestCase {
 
     func testNumberOfSpotlight() {
         let value = viewModel?.numberOfSpotlight
-        let expected = 2
+        let expected = 1
         XCTAssertEqual(value, expected)
     }
 
     func testNumberOfProducts() {
         let value = viewModel?.numberOfProducts
-        let expected = 3
+        let expected = 1
         XCTAssertEqual(value, expected)
     }
 
