@@ -1,0 +1,115 @@
+disabled_rules: # rule identifiers to exclude from running
+  - block_based_kvo
+opt_in_rules: # some rules are only opt-in
+  - empty_count
+  - empty_string
+  - vertical_whitespace_opening_braces
+  - vertical_whitespace_closing_braces
+  - vertical_whitespace_between_cases
+  - comma
+  - explicit_init
+  - force_cast
+  - implicit_return
+  - mark
+  - multiline_arguments
+  - no_space_in_method_call
+  - trailing_comma
+  - void_return
+  - force_unwrapping
+  # Find all the available rules by running:
+  # swiftlint rules
+included: # paths to include during linting. `--path` is ignored if present.
+  - teste-digio/Source
+excluded: # paths to ignore during linting. Takes precedence over `included`.
+  - Carthage
+  - Pods
+  - Source/ExcludedFolder
+  - Source/ExcludedFile.swift
+  - Source/*/ExcludedFile.swift # Exclude files with a wildcard
+analyzer_rules: # Rules run by `swiftlint analyze` (experimental)
+  - explicit_self
+# configurable rules can be customized from this configuration file
+# binary rules can set their severity level
+force_unwrapping:
+    severity: error
+void_return:
+    severity: error
+trailing_comma:
+    severity: error
+no_space_in_method_call:
+    severity: error
+implicit_return:
+  severity: error
+force_cast:
+  severity: error
+force_try:
+  severity: error # explicitly
+# rules that have both warning and error levels, can set just the warning level
+# implicitly
+line_length: 110
+# they can set both implicitly with an array
+type_body_length:
+  - 300 # warning
+  - 400 # error
+# or they can set both explicitly
+file_length:
+  warning: 500
+  error: 1200
+# naming rules can set warnings/errors for min_length and max_length
+# additionally they can set excluded names
+type_name:
+  min_length: 4 # only warning
+  max_length: # warning and error
+    warning: 40
+    error: 50
+  excluded: iPhone
+large_tuple: # deixar assim por causa do token (se mexer pode explodir rs)
+   - 5
+   - 7
+multiline_arguments:
+    severity: error
+mark:
+    severity: error
+empty_count:
+    severity: error
+explicit_init:
+    severity: error
+control_statement:
+    severity: error
+colon:
+    severity: error
+comma:
+    severity: error
+return_arrow_whitespace:
+    severity: error
+trailing_whitespace:
+    severity: error
+trailing_newline:
+    severity: error
+empty_string:
+    severity: error
+trailing_semicolon:
+    severity: error
+vertical_whitespace_opening_braces:
+    severity: error
+vertical_whitespace_closing_braces:
+    severity: error
+vertical_whitespace_between_cases:
+    severity: error
+opening_brace:
+    severity: error
+identifier_name:
+  min_length: # only min_length
+    error: 3 # only error
+  excluded: # excluded via string array
+    - ti
+    - RG
+    - CPF
+    - CNH
+    - rg
+    - cpf
+    - cnh
+    - id
+    - URL
+    - GlobalAPIKey
+reporter: "xcode" # reporter type (xcode, json, csv, checkstyle, junit, html, emoji, sonarqube, markdown)
